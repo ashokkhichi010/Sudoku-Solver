@@ -31,6 +31,15 @@
 				}
 			}
 		}else{
+			$item = $sudoku[$row][$col];
+			if ( ! isSef($sudoku,$row,$col,$item)) {
+				$sudoku[$row][$col] = '';
+				if(cell($sudoku,$row,$col)){
+					return true;
+				}else{
+					return false;
+				}
+			}
 			if (cell($sudoku, $newRow, $newCol)) {
 				return true;
 			}
